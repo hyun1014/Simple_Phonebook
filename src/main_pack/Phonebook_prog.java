@@ -1,6 +1,5 @@
 package main_pack;
-import java.util.TreeMap;
-import java.util.Scanner;
+import java.util.*;
 
 public class Phonebook_prog {
 	static TreeMap<String, Person> db = new TreeMap<>();
@@ -16,8 +15,15 @@ public class Phonebook_prog {
 		while(run) {
 			System.out.println("Input choice.\n--------------------------");
 			System.out.print("1.Input data\n2.Search data\n3.Delete date\n0.Exit\nChoice: ");
-			ch = sc.nextInt();
-			sc.nextLine();
+			try {
+				ch = sc.nextInt();
+				sc.nextLine();
+			}
+			catch (InputMismatchException e) {
+				System.out.println("Invalid value. Only number is valid.\n");
+				sc.nextLine();
+				continue;
+			}
 			switch(ch) {
 			case 1:
 				mg.newInfo();

@@ -50,6 +50,8 @@ public class Pb_infomanager {
 			try {
 				System.out.print("Age: ");
 				age = sc.nextInt();
+				if(age<0)
+					System.out.println("Invalid value.");
 			}
 			catch(InputMismatchException e) {
 				System.out.println("Invalid input. Only number is valid.");
@@ -58,8 +60,6 @@ public class Pb_infomanager {
 			finally {
 				sc.nextLine();
 			}
-			if(age<0)
-				System.out.println("Invalid value.");
 		}
 		if(ch==3)
 			db.put(name, new Person(name, phoneNum, age));
